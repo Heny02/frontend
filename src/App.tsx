@@ -8,8 +8,12 @@ import UtilisateursPage from "./pages/admin/Utilisateurs";
 import ComitesEvaluationPage from "./pages/admin/ComitesEvaluation";
 import DepartementsPage from "./pages/admin/Departements";
 import PublicLayout from "./layouts/PublicLayout";
-
 import LandingPage from "./pages/dentiste/LandingPage";
+import UtilisateurPage from "./pages/utilisateur/pages";
+import IllustrationsPage from "./pages/illustrations/pages";
+import IllustrationDetailPage from "./pages/illustrations/views";
+import ResourcesPage from "./pages/illustrations/videos";
+import ResourceTypePage from "./pages/illustrations/ressources/type";
 
 const App: React.FC = () => {
   return (
@@ -32,9 +36,19 @@ const App: React.FC = () => {
           <Route path="/admin/comites" element={<ComitesEvaluationPage />} />
           <Route path="/admin/departements" element={<DepartementsPage />} />
         </Route>
+
+        {/* Route for UtilisateurPage */}
+        <Route path="/utilisateur" element={<UtilisateurPage />} />
+
+        {/* Routes for Illustrations */}
+        <Route path="/illustrations" element={<IllustrationsPage />} />
+        <Route path="/illustrations/:id" element={<IllustrationDetailPage />} />
+        <Route path="/illustrations/resources/:id" element={<ResourcesPage />} />
+        <Route path="/illustrations/resources/:id/:type" element={<ResourceTypePage />} />
       </Routes>
     </Router>
   );
 };
 
 export default App;
+
